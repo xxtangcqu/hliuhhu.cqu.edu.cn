@@ -1,0 +1,416 @@
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Pauli Järvinen 2017 - 2021
+ */
+
+.icon-music-dark {
+	background-image: url(img/5347a8f54eb01e2ae5be536a2b86ef4d.svg);
+}
+
+.icon-radio-nav {
+	background-image: url(img/463648f71ce4ea7920a07fd6204609e2.svg);
+}
+
+#music-controls {
+	height: 66px;
+	width: 100%;
+	padding: 0 20px 0 20px;
+	position: fixed;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.95);
+	z-index: 50;
+	text-align: left;
+}
+
+#music-controls.with-playlist {
+	height: 90px;
+}
+
+#music-controls #playlist-area {
+	display: none;
+	width: 100%;
+	height: 24px;
+}
+
+#music-controls.with-playlist #playlist-area {
+	display: block;
+}
+
+#music-controls #playlist-area > span {
+	margin-top: 5px;
+	margin-left: 10px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: pre;
+}
+
+#music-controls #playlist-area #playlist-name {
+	left: 10px;
+	font-weight: bold;
+	max-width: 66%;
+}
+
+#music-controls #playlist-area #menu-container {
+	position: absolute;
+	margin-left: 10px;
+}
+
+#music-controls #playlist-area .icon-more {
+	border: none;
+	background-color: transparent;
+	vertical-align: top;
+	margin-top: 8px;
+	opacity: .4;
+}
+
+#music-controls #playlist-area .icon-more:hover {
+	opacity: 1.0;
+}
+
+#music-controls #playlist-area .popovermenu {
+	box-sizing: content-box;
+	padding: 0;
+	bottom: 24px;
+	transform: translateX(50%);
+	right: 50% ;
+	margin-right: 0;
+	display: none;
+}
+
+#music-controls #playlist-area .popovermenu.open {
+	display: block;
+}
+
+#music-controls #playlist-area .popovermenu ul {
+	display: block;
+}
+
+#music-controls #playlist-area .popovermenu ul li {
+	padding: 0 10px 0 0;
+	white-space: nowrap;
+}
+
+#music-controls #playlist-area .popovermenu ul a {
+	opacity: .7;
+	line-height: 36px;
+}
+
+#music-controls #playlist-area .popovermenu ul a:hover {
+	opacity: 1.0;
+}
+
+#music-controls #playlist-area .popovermenu ul a span {
+	display: inline;
+}
+
+#music-controls #playlist-area .popovermenu ul a [class^='icon-'] {
+	padding: 18px 0 18px 36px;
+	background-size: 16px;
+}
+
+/* Place the carret under the popup */
+#music-controls #playlist-area .popovermenu::after {
+	right: 50%;
+	transform: translateX(50%) translateY(100%) rotate(180deg);
+	bottom: 0;
+}
+
+#music-controls, #music-controls * {
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+#music-controls .control {
+	height: 52px;
+	width: 52px;
+	padding: 10px;
+	margin: 9px 2px 5px;
+	cursor: pointer;
+	opacity: .4;
+}
+
+#music-controls .control.disabled,
+#music-controls #playlist-area .popovermenu ul li.disabled a {
+	cursor: default !important;
+	opacity: .15 !important;
+}
+
+#music-controls #playlist-area .popovermenu ul li.disabled * {
+	cursor: default !important;
+}
+
+#music-controls #playlist-area .popovermenu .hidden {
+	display: none;
+}
+
+#music-controls .control.small {
+	height: 44px;
+	width: 44px;
+	margin: 13px 2px 9px;
+}
+
+#music-controls .control#close {
+	height: 46px;
+	width: 46px;
+	margin: 0;
+	padding: 15px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#music-controls .control:hover:not(.disabled),
+#music-controls .control:focus:not(.disabled) {
+	opacity: 1;
+}
+
+#music-controls #albumart {
+	height: 50px;
+	width: 50px;
+	margin: 8px 12px 8px 20px;
+	line-height: 50px;
+	font-size: 28px;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	border: solid #eee 1px;
+}
+
+#music-controls #info-and-progress {
+	display: inline-block;
+	position: absolute;
+	left: 260px;
+	right: 180px;
+	width: auto;
+	height: 100%;
+}
+
+#music-controls #song-info {
+	height: 100%;
+	width: 60%;
+	margin-top: 7px;
+	vertical-align: top;
+}
+
+#music-controls #song-info span {
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+#music-controls #title {
+	font-weight: bold;
+	font-size: 21px;
+	line-height: 29px;
+}
+
+#music-controls .progress-info {
+	width: 40%;
+	text-align: center;
+	margin: 0 auto 25px auto;
+	overflow: hidden;
+}
+
+#music-controls .progress-info span {
+	line-height: 30px;
+}
+
+#music-controls .seek-bar {
+	width: 100%;
+	max-width: 350px;
+	height: 15px;
+	margin: 0 auto 0 auto;
+	position: relative;
+	background-color: #eee;
+}
+
+#music-controls .seek-bar, #music-controls .play-bar, #music-controls .buffer-bar {
+	display: block;
+}
+
+#music-controls .play-bar, #music-controls .buffer-bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 15px;
+	width: 0%;
+	background-color: #1d2d44;
+}
+
+#music-controls .buffer-bar {
+	opacity: 0.1;
+}
+
+#music-controls .volume-control {
+	position: absolute;
+	right: 120px;
+}
+
+.ie.lte9 #music-controls .volume-control {
+	display: none;
+}
+
+#music-controls #volume-icon {
+	cursor: default;
+	opacity: .4;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#music-controls .volume-control input[type=range] {
+	position: absolute;
+	width: 58px;
+	height: 3px;
+	min-height: 3px;
+	top: 31px;
+	left: 21px;
+	margin: 0;
+	-webkit-appearance: none;
+	background-color: silver;
+	transform: rotate(270deg);
+}
+
+.ie #music-controls .volume-control input[type=range] {
+	height:auto;
+	top: 3px;
+	left: 26px;
+	background-color: transparent;
+}
+
+::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #666;
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+}
+
+:hover::-webkit-slider-thumb {
+	cursor: pointer;
+}
+
+::-moz-range-thumb {
+	-moz-appearance: none;
+	background-color: #666;
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+}
+
+:hover::-moz-range-thumb {
+	cursor: pointer;
+}
+
+/* "Tablet" style */
+#music-controls.tablet {
+	padding: 0;
+}
+#music-controls.tablet #albumart {
+	margin-left: 10px;
+}
+#music-controls.tablet #info-and-progress {
+	left: 230px;
+	right: 140px;
+}
+#music-controls.tablet #title {
+	font-size: 14px;
+}
+
+/* "Mobile" style */
+#music-controls.mobile #prev {
+	display: none;
+}
+#music-controls.mobile .control {
+	margin-right: 0;
+}
+#music-controls.mobile #albumart {
+	margin-left: 0;
+	margin-right: 0;
+}
+#music-controls.mobile #info-and-progress {
+	left: 160px;
+	right: 50px;
+}
+#music-controls.mobile .volume-control {
+	display: none;
+}
+
+/* "Extra narrow" style */
+#music-controls.extra-narrow #song-info {
+	width: 100%;
+}
+#music-controls.extra-narrow .progress-info {
+	display: none;
+}
+
+/* Hide the music controls when menu on left is in collapsible mode (on portrait phone)
+ * and the menu is open */
+body.snapjs-left #music-controls {
+	visibility: hidden;
+}
+
+/* Playlist tab view shown in the Files sidebar */
+
+.musicPlaylistTabView p {
+	margin-top: 24px;
+	font-weight: bold;
+}
+
+.musicPlaylistTabView .loading {
+	height: 50px;
+}
+
+.musicPlaylistTabView li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+}
+
+.musicPlaylistTabView ol {
+	list-style: decimal inside;
+}
+
+.musicPlaylistTabView ol li {
+	cursor: pointer;
+	list-style-type: decimal;
+}
+
+.musicPlaylistTabView ol li::marker {
+	color: #767676;
+}
+
+.musicPlaylistTabView ol li:hover,
+.musicPlaylistTabView ol li.current {
+	transition: background-color 0.3s ease;
+	background-color: #f7f7f7;
+}
+
+/* Adjustments for the Nextcloud dark theme */
+#music-controls.dark-theme {
+	background-color: rgba(24, 24, 24, 0.95);
+}
+
+#music-controls.dark-theme #albumart {
+	border-color: rgb(64, 64, 64);
+}
+
+#music-controls.dark-theme .svg {
+	filter: invert(100%);
+}
+
+.musicPlaylistTabView.dark-theme ol li:hover,
+.musicPlaylistTabView.dark-theme ol li.current {
+	background-color: var(--color-background-dark);
+}
+
+
+/*# sourceMappingURL=webpack.files_music_player.361a5d8ccce9f2d0904e.css.map*/

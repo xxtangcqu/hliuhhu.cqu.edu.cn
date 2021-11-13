@@ -1,0 +1,31 @@
+tr.cut div.thumbnail {
+	opacity: 0.6;
+}
+
+#clipboard_paste {
+	margin-left: 3px;
+	opacity: 0.65;
+}
+
+#clipboard_paste.blink {
+	background-color: white;
+}
+
+
+#clipboard_paste.disabled > img {
+	opacity: 0.3;
+	cursor:default;
+}
+
+#notification .files_clipboard_error {
+	text-align:left;
+	margin-bottom: 0.4em; 
+	padding: 0.2em;
+}
+
+@media only screen and (max-width: 768px) {
+	#clipboard_cut > span:not(.svg),
+	#clipboard_copy > span:not(.svg) {
+		display: none;
+	}
+}

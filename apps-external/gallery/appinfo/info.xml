@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<info>
+	<id>gallery</id>
+	<name>Gallery</name>
+	<summary>Explore, show and share your image collections</summary>
+	<description>
+Media gallery that adds image viewing capabilities to files view and public links. Provides a dedicated grid-based album view for images.
+
+**Features**
+		
+- Support for a large selection of image types (depending on server setup)
+- Fullscreen, zoomable image view integrated with the Files app
+- Slideshow
+- Sort images by name or date
+- Per album description and copyright statement
+- Image download straight from the slideshow or the album view
+- Seamlessly jump between the gallery and files view
+- Ignore folders containing a ".nomedia" file
+- Native SVG support
+- Mobile support</description>
+	<licence>AGPL</licence>
+	<author>Olivier Paroz, Robin Appelman, Thomas Müller</author>
+	<version>16.1.2</version>
+	<namespace>Gallery</namespace>
+	<documentation>
+		<user>https://doc.owncloud.com/server/latest/user_manual/files/gallery_app.html</user>
+		<admin>https://doc.owncloud.com/server/latest/user_manual/files/gallery_app.html</admin>
+		<developer>https://github.com/owncloud/gallery/blob/master/README.md</developer>
+	</documentation>
+	<category>multimedia</category>
+	<screenshot>https://raw.githubusercontent.com/owncloud/screenshots/0e38639046884e863afc654c5529c8014f7d42fb/gallery/gallery.png</screenshot>
+	<website>https://github.com/owncloud/gallery</website>
+	<bugs>https://github.com/owncloud/gallery/issues</bugs>
+	<repository type="git">https://github.com/owncloud/gallery.git</repository>
+	<dependencies>
+		<owncloud min-version="10.8" max-version="10"/>
+	</dependencies>
+	<default_enable />
+</info>
